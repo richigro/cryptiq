@@ -1,10 +1,26 @@
 import React from 'react';
 import './App.css';
+import WelcomeMessage from './WelcomeMessage';
+import styled, { css } from 'styled-components';
 
-function App() {
+const MyButton = styled.button `
+  color: green;
+  
+
+  ${props => props.primary && css `
+    background-color: white;
+    color: palevioletred;
+  `}
+`; 
+
+
+const App = () => {
   return (
-    <div className="App">
-    hi
+    <div>
+      <WelcomeMessage/>
+      <MyButton primary>
+        hello
+      </MyButton>
     </div>
   );
 }
